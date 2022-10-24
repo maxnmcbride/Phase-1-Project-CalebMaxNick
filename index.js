@@ -8,17 +8,33 @@
     breweryArray.forEach((brewery) => {renderBreweryData(brewery)
     
     })
-    //console.log(breweryArray)
+    console.log(breweryArray)
   })
 
   // function to generate random brewery name at page load
   function renderBreweryData(brewery){
-    console.log(brewery)
+    //console.log(brewery)
     let breweryContainer = document.querySelector('#breweryContainer')
     let breweryCards = document.createElement('div')
-    breweryCards.classList.add('card')
-    breweryContainer.append(breweryCards)
-  }
+        breweryCards.classList.add('card')
+    let nameOfBrewery = document.createElement('h2')
+        nameOfBrewery.textContent = brewery.name
+    let styleOfBrewery = document.createElement('p')
+        styleOfBrewery.textContent = brewery.brewery_type
+    let locationOfBrewery = document.createElement('p')
+        locationOfBrewery.textContent = brewery.state
+        
+    
+       
+        breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
+        breweryContainer.append(breweryCards)
+    
+        breweryCards.addEventListener('click', e => {
+         // e.target.breweryURL
+          console.log(e.target.brewery)
+        })
+        //onclick = e => {brewery}
+}
   
   // comment form function
   const comments = document.querySelector('#comment-form')
