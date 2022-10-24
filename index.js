@@ -5,10 +5,10 @@
   .then(response => response.json())
   .then(breweryArray => {
     
-    breweryArray.forEach((brewery) => {renderBreweryData(brewery)
-    
-    })
-    console.log(breweryArray)
+    breweryArray.forEach((brewery) => {
+      renderBreweryData(brewery)  
+    }) //end of forEach method
+    //console.log(breweryArray)
   })
 
   // function to generate random brewery name at page load
@@ -23,20 +23,21 @@
         styleOfBrewery.textContent = brewery.brewery_type
     let locationOfBrewery = document.createElement('p')
         locationOfBrewery.textContent = brewery.state
+        //breweryURL.textContent = brewery.brewery_url
         
-    
-       
+        
+        
         breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
         breweryContainer.append(breweryCards)
-    
-        breweryCards.addEventListener('click', e => {
-         // e.target.breweryURL
-          console.log(e.target.brewery)
-        })
+        
+        // breweryCards.addEventListener('click', e => {
+          // e.target.breweryURL
+          //  console.log(e.target.brewery)
+          //  })
         //onclick = e => {brewery}
 }
-  
-  // comment form function
+
+// comment form function
   const comments = document.querySelector('#comment-form')
 
   comments.addEventListener("submit", e => {
@@ -46,9 +47,15 @@
     // console.log(e.target['review'].value)
     const reviews = document.querySelector('#reviews')
     //reviews.value.reset()
-      reviews.appendChild(breweryComment)
+    reviews.appendChild(breweryComment)
     })
     //}
-
-    // create search form to filter by location
+    
+    // create function for website URL
+    function breweryURL (URL) {
+          document.createElement('a')
+          breweryURL.innerText = brewery.brewery_url
+          console.log(brewery.brewery_url)
+    }
+    breweryURL()
     
