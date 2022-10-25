@@ -22,14 +22,13 @@ let breweryData = [];
         styleOfBrewery.textContent = brewery.brewery_type
     let locationOfBrewery = document.createElement('p')
         locationOfBrewery.textContent = brewery.state
-
         breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
         breweryContainer.append(breweryCards)
-    
-        breweryCards.addEventListener('click', e => {
-         // e.target.breweryURL
-          console.log(e.target.brewery)
-        })
+        
+        // breweryCards.addEventListener('click', e => {
+          // e.target.breweryURL
+          //  console.log(e.target.brewery)
+          //  })
         //onclick = e => {brewery}
 }
   // comment form function
