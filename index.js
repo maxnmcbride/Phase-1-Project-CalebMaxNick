@@ -1,16 +1,15 @@
 //document.addEventListener("DOMContentLoaded",fetchBreweryData())
-
+let breweryData = [];
 //function fetchBreweryData() {
   fetch ('https://api.openbrewerydb.org/breweries')
   .then(response => response.json())
-  .then(breweryArray => {
-    
-    breweryArray.forEach((brewery) => {renderBreweryData(brewery)
-    
+  .then((data) => {
+        breweryData = data;
+        breweryData.forEach((brewery) => {
+          renderBreweryData(brewery)
     })
-    console.log(breweryArray)
+    // console.log(breweryData)
   })
-
   // function to generate random brewery name at page load
   function renderBreweryData(brewery){
     //console.log(brewery)
@@ -23,9 +22,7 @@
         styleOfBrewery.textContent = brewery.brewery_type
     let locationOfBrewery = document.createElement('p')
         locationOfBrewery.textContent = brewery.state
-        
-    
-       
+
         breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
         breweryContainer.append(breweryCards)
     
@@ -35,20 +32,19 @@
         })
         //onclick = e => {brewery}
 }
-  
   // comment form function
-  const comments = document.querySelector('#comment-form')
+const comments = document.querySelector('#comment-form')
 
-  comments.addEventListener("submit", e => {
-    e.preventDefault()
-    const breweryComment = document.createElement('li')
-    breweryComment.textContent = e.target['review'].value
+  comments.addEventListener("submit", (event) => {
+      event.preventDefault()
+  const breweryComment = document.createElement('li')
+    breweryComment.textContent = event.target['review'].value
     // console.log(e.target['review'].value)
     const reviews = document.querySelector('#reviews')
-    //reviews.value.reset()
+    comments.reset()
       reviews.appendChild(breweryComment)
     })
     //}
 
     // create search form to filter by location
-    
+
