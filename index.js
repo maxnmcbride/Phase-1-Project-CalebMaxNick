@@ -21,6 +21,7 @@ let breweryContainer = document.querySelector('#breweryContainer')
         nameOfBrewery.textContent = brewery.name
     let styleOfBrewery = document.createElement('p')
         styleOfBrewery.textContent = brewery.brewery_type
+        styleOfBrewery.classList.add('breweryStyleFont')
     let locationOfBrewery = document.createElement('p')
         locationOfBrewery.textContent = brewery.state
         breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
