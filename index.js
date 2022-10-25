@@ -38,7 +38,7 @@ const comments = document.querySelector('#comment-form')
   comments.addEventListener("submit", (event) => {
       event.preventDefault()
   const breweryComment = document.createElement('li')
-    breweryComment.textContent = event.target['review'].value
+    breweryComment.textContent = event.target.review.value
     // console.log(e.target['review'].value)
     const reviews = document.querySelector('#reviews')
     comments.reset()
