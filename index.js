@@ -46,4 +46,14 @@ const comments = document.querySelector('#comment-form')
     //}
 
     // create search form to filter by location
+const searchBar = document.querySelector('#search-form')
+    searchBar.addEventListener('submit', (event) => {
+      event.preventDefault();
+      // console.log(event.target.search.value)
+      searchBar.reset()
+      // console.log(breweryData.name)
+      // breweryData.filter(brewery.state)
+      // console.log(brewery.state)
+    })
+
 
