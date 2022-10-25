@@ -6,9 +6,8 @@ let breweryData = [];
   .then((data) => {
         breweryData = data;
         breweryData.forEach((brewery) => {
-          renderBreweryData(brewery)
+          renderBreweryData(brewery);
     })
-    // console.log(breweryData)
   })
   // function to generate random brewery name at page load
   function renderBreweryData(brewery){
@@ -24,6 +23,7 @@ let breweryData = [];
         locationOfBrewery.textContent = brewery.state
         breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
         breweryContainer.append(breweryCards)
+      // console.log(brewery.name)
         
         // breweryCards.addEventListener('click', e => {
           // e.target.breweryURL
@@ -46,14 +46,21 @@ const comments = document.querySelector('#comment-form')
     //}
 
     // create search form to filter by location
-const searchBar = document.querySelector('#search-form')
-    searchBar.addEventListener('submit', (event) => {
-      event.preventDefault();
-      // console.log(event.target.search.value)
-      searchBar.reset()
-      // console.log(breweryData.name)
-      // breweryData.filter(brewery.state)
-      // console.log(brewery.state)
-    })
+  const searchBar = document.querySelector('#search-form')
 
+  searchBar.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const userInput = event.target.search.value
+      searchBar.reset()
+      const filterData = breweryData.filter((theOneBrewery) => {
+        // this function needs to return true or false
+        const currentState = theOneBrewery.state
+        if (currentState == userInput) { 
+          return true
+        } else {
+          return false
+        }
+      })
+console.log(filterData)  
+    })
 
