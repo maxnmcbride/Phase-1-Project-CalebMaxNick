@@ -1,43 +1,40 @@
-//document.addEventListener("DOMContentLoaded",fetchBreweryData())
+document.addEventListener("DOMContentLoaded", () => {
 let breweryData = [];
 let breweryContainer = document.querySelector('#breweryContainer')
-//function fetchBreweryData() {
+
   fetch ('https://api.openbrewerydb.org/breweries')
   .then(response => response.json())
   .then((data) => {
-        breweryData = data;
-        breweryData.forEach((brewery) => {
-          renderBreweryData(brewery);
+    breweryData = data;
+    breweryData.forEach((brewery) => {
+      renderBreweryData(brewery); 
     })
   })
-
   // function to generate brewery cards
   function renderBreweryData(brewery){
-    //console.log(brewery)
-    //let breweryContainer = document.querySelector('#breweryContainer')
+    
     let breweryCards = document.createElement('div')
         breweryCards.classList.add('card')
     let nameOfBrewery = document.createElement('h3')
         nameOfBrewery.textContent = brewery.name
     let styleOfBrewery = document.createElement('p')
-        styleOfBrewery.textContent = brewery.brewery_type
+        styleOfBrewery.textContent = `Brewery Style: ${brewery.brewery_type}`
         styleOfBrewery.classList.add('breweryStyleFont')
     let locationOfBrewery = document.createElement('p')
         locationOfBrewery.textContent = brewery.state
-        breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
-        breweryContainer.append(breweryCards)
-      // console.log(brewery.name)
-        
-        // breweryCards.addEventListener('click', e => {
-          // e.target.breweryURL
-          //  console.log(e.target.brewery)
-          //  })
-        //onclick = e => {brewery}
-}
-  // comment form function fully working and compete!
-const comments = document.querySelector('#comment-form')
-
-comments.addEventListener("submit", (event) => {
+    let urlTag = document.createElement('a')
+        urlTag.href = brewery.website_url
+        urlTag.target = '_blank'
+        urlTag.classList.add('urlStyle')
+    
+    breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
+    urlTag.append(breweryCards)
+        breweryContainer.append(urlTag)  
+  }
+  // comment form function fully working and competing!
+  const comments = document.querySelector('#comment-form')
+  
+  comments.addEventListener("submit", (event) => {
     event.preventDefault()
     const breweryComment = document.createElement('li')
     breweryComment.textContent = event.target.review.value
@@ -46,27 +43,23 @@ comments.addEventListener("submit", (event) => {
     comments.reset()
     reviews.appendChild(breweryComment)
   })
-    //}
-
-    // create search form to filter by location
-const searchBar = document.querySelector('#search-form')
-
-searchBar.addEventListener('submit', (event) => {
+  // create search form to filter by location
+  const searchBar = document.querySelector('#search-form')
+  
+  searchBar.addEventListener('submit', (event) => {
     event.preventDefault();
     const userInput = event.target.search.value
     searchBar.reset()
     const filterData = breweryData.filter((theOneBrewery) => {
-        // this function needs to return true or false
+      // this function needs to return true or false
       const currentState = theOneBrewery.state
       if (currentState == userInput) { 
-        breweryContainer.innerHTML ="";
-        renderBreweryData(theOneBrewery)
         return true
       } else {
         return false
-        //document.getElementById('breweryContainer').hidden = true;
       }
     })
-  console.log(filterData)  
+    breweryContainer.innerHTML = ""
+    filterData.forEach(renderBreweryData)
   })
-
+})
