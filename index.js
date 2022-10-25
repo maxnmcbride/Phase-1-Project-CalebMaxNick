@@ -9,7 +9,8 @@ let breweryData = [];
           renderBreweryData(brewery);
     })
   })
-  // function to generate random brewery name at page load
+
+  // function to generate brewery cards
   function renderBreweryData(brewery){
     //console.log(brewery)
     let breweryContainer = document.querySelector('#breweryContainer')
@@ -31,36 +32,36 @@ let breweryData = [];
           //  })
         //onclick = e => {brewery}
 }
-  // comment form function
+  // comment form function fully working and compete!
 const comments = document.querySelector('#comment-form')
 
-  comments.addEventListener("submit", (event) => {
-      event.preventDefault()
-  const breweryComment = document.createElement('li')
+comments.addEventListener("submit", (event) => {
+    event.preventDefault()
+    const breweryComment = document.createElement('li')
     breweryComment.textContent = event.target.review.value
     // console.log(e.target['review'].value)
     const reviews = document.querySelector('#reviews')
     comments.reset()
-      reviews.appendChild(breweryComment)
-    })
+    reviews.appendChild(breweryComment)
+  })
     //}
 
     // create search form to filter by location
-  const searchBar = document.querySelector('#search-form')
+const searchBar = document.querySelector('#search-form')
 
-  searchBar.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const userInput = event.target.search.value
-      searchBar.reset()
-      const filterData = breweryData.filter((theOneBrewery) => {
+searchBar.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const userInput = event.target.search.value
+    searchBar.reset()
+    const filterData = breweryData.filter((theOneBrewery) => {
         // this function needs to return true or false
-        const currentState = theOneBrewery.state
-        if (currentState == userInput) { 
-          return true
-        } else {
-          return false
-        }
-      })
-console.log(filterData)  
+      const currentState = theOneBrewery.state
+      if (currentState == userInput) { 
+        return true
+      } else {
+        return false
+      }
     })
+  console.log(filterData)  
+  })
 
