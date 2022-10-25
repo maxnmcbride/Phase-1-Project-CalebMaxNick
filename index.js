@@ -1,5 +1,6 @@
 //document.addEventListener("DOMContentLoaded",fetchBreweryData())
 let breweryData = [];
+let breweryContainer = document.querySelector('#breweryContainer')
 //function fetchBreweryData() {
   fetch ('https://api.openbrewerydb.org/breweries')
   .then(response => response.json())
@@ -13,7 +14,7 @@ let breweryData = [];
   // function to generate brewery cards
   function renderBreweryData(brewery){
     //console.log(brewery)
-    let breweryContainer = document.querySelector('#breweryContainer')
+    //let breweryContainer = document.querySelector('#breweryContainer')
     let breweryCards = document.createElement('div')
         breweryCards.classList.add('card')
     let nameOfBrewery = document.createElement('h2')
@@ -57,9 +58,12 @@ searchBar.addEventListener('submit', (event) => {
         // this function needs to return true or false
       const currentState = theOneBrewery.state
       if (currentState == userInput) { 
+        breweryContainer.innerHTML ="";
+        renderBreweryData(theOneBrewery)
         return true
       } else {
         return false
+        //document.getElementById('breweryContainer').hidden = true;
       }
     })
   console.log(filterData)  
