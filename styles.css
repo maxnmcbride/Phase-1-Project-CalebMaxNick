@@ -19,6 +19,7 @@ a:active { text-decoration: none; }
   background: rgb(169, 113, 57);
   background-size: contain;
   position: relative;
+  padding: 5px;
 }
 
 .card {
