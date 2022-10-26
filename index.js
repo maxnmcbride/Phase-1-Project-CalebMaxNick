@@ -14,9 +14,9 @@ let breweryContainer = document.querySelector('#breweryContainer')
 function renderBreweryData(brewery){
   let breweryCards = document.createElement('div')
       breweryCards.classList.add('card')
-  let nameOfBrewery = document.createElement('h3')
+  let nameOfBrewery = document.createElement('h2')
        nameOfBrewery.textContent = brewery.name
-  let styleOfBrewery = document.createElement('p')
+  let styleOfBrewery = document.createElement('h4')
       styleOfBrewery.textContent = `Brewery Style: ${brewery.brewery_type}`
       styleOfBrewery.classList.add('breweryStyleFont')
   let locationOfBrewery = document.createElement('p')
