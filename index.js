@@ -28,11 +28,16 @@ function renderBreweryData(brewery){
   const breweryLiker = document.createElement( "button" )
     breweryLiker.innerText = '♡'
     breweryLiker.className = 'like-btn'
+    let clicked = false
     breweryLiker.addEventListener('click' , () => {
-    breweryLiker.innerText='❤️';} )
-    // breweryLiker.addEventListener('click', () => {
-    //   breweryLiker.innerText='♡';
-    // })
+      clicked = !clicked
+      if (clicked){
+        breweryLiker.innerText='❤️'
+      }else{
+        breweryLiker.innerText='♡'
+      }
+  })
+
     urlTag.append(nameOfBrewery)
     breweryCards.append(urlTag, styleOfBrewery, locationOfBrewery, breweryLiker)
     breweryContainer.append(breweryCards)  
@@ -57,17 +62,3 @@ const searchBar = document.querySelector('#search-form')
     filterData.forEach(renderBreweryData)
   })
 })
-
-// function viewAll
-
-  // // comment form function fully working and competing!
-  // const comments = document.querySelector('#comment-form')
-  
-  // comments.addEventListener("submit", (event) => {
-  //   event.preventDefault()
-  //   const breweryComment = document.createElement('li')
-  //   breweryComment.textContent = event.target.review.value
-  //   const reviews = document.querySelector('#reviews')
-  //   comments.reset()
-  //   reviews.appendChild(breweryComment)
-  // })
