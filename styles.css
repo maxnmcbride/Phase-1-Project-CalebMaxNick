@@ -22,21 +22,21 @@ a:active { text-decoration: none; }
 }
 
 .card {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: large;
-    font-variant: small-caps;
-    border: rgb(3, 3, 3) solid 1px;
-    border-radius: 5%;
-    padding: 1rem;
-    width: 12rem;
-    height: 20rem;
-    display: inline-grid;
-    margin: 1rem 2rem;
-    background: #e8eded;
-    box-shadow: 3px 4px #dff30a
-  }
- 
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-variant: small-caps;
+  border: rgb(3, 3, 3) solid 1px;
+  border-radius: 5%;
+  padding: 1rem;
+  width: 12rem;
+  height: 20rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  background: #e8eded;
+  box-shadow: 3px 4px #dff30a
+}
+    
 .breweryStyleFont{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
@@ -46,6 +46,16 @@ a:active { text-decoration: none; }
 .formFormat{
   background: blanchedalmond;
   border: rgb(3, 3, 3) solid 1px;
-  border-radius: 3px;
-  padding: 3px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.like-btn{
+  border: none;
+  background: none;
+}
+
+.searchBar{
+  text-align: center;
+  font-size: 35px;
 }

@@ -1,0 +1,1 @@
+This is a brewery application that allows users to search through 20 different breweries to find one in the location of their choice. Clicking the name of the brewery will take the user to the homepage of the brewery. The user will be able to like or unlike a brewery of their choice.

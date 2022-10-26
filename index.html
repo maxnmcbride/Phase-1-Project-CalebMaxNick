@@ -24,39 +24,35 @@
     <!-- cursor -->
     <style type="text/css">body { cursor: url('data:image/x-icon;base64,AAACAAEAICAQAAAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAA4tesAAAAAADWp2wBu0/8A////AACz/wD19fUAT8r/AMLCwgDZ2dkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERGYlmZpiRERERERERERERERmIOIOIkREREREREREREREZiWZmmJERERERERERERERFyIyIyJ0REERERERERERERUFNVNQURFEEREREREREREVBTVTUFERFBERERERERERFQU1U1BRERQRERERERERERUFNVNQUREUEREREREREREVBTVTUFERFBERERERERERFQU1U1BRERQRERERERERERUFNVNQURFEEREREREREREWiWZmmEREQRERERERERERFolmZphBERERERERERERERaJZmaYQREREREREREREREWiWZmmEERERERERERERERFpZmZmlBERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERMxERERERERERERERERERESMxEREREREREREREREREREiMRERERERERERERERERERERERERERERERERERERERH////////////////////////////////////////////AD///gAf//4AH//+AAP//gAB//4AAP/+ABj//gAY//4AGP/+ABj//gAY//4AAP/+AAH//gAD//4AH//+AB///gAf//8AP/3////8f////D////wf///8H////A////w=='), auto; }</style>
 
-    <!-- randomized brewery on page load -->
-    <div id="featuredBrewery">
-        <img></img>
+    <!-- brews clues title -->
+    <div id="title">
         <h1 class="title">Brews Clues - Brewery Search</h1>
-        <p></p>
-        <ul></ul>
     </div>
-        
+
+     <!-- search bar for brewery by location -->
+     <header>
+         <form id="search-form">    
+             <label class="formFormat" for="site-search">Search For Brewery By State</label><br>
+             <input type="search" id="search" name="q">
+             <button>Search</button>
+             <br>
+         </form>  
+     </header>
+    
+    <br>
     <!-- Container for Brewery Cards -->
     <div class="containerOfCards" id="breweryContainer"></div>
 
     <!-- form for comments-->
-    <form id="comment-form">
+    <!-- <form id="comment-form">
         <div id="reviews"></div>
         <label class="formFormat" for="review">Review Comment</label><br>
         <br>
         <textarea id="review"></textarea><br>
         <button type="submit">Add Review</button><br>
-        <br>
+        <br> -->
     <!--reviews container-->
     </form>
-
-    <!-- search bar for brewery by location -->
-    <header>
-        <form id="search-form">    
-            <label class="formFormat" for="site-search">Search For Brewery By State</label><br>
-            <br>
-            <input type="search" id="search" name="q">
-            <button>Search</button>
-        </form>  
-    </header>
-
-
 
 </body>
 </html>
