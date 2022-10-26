@@ -27,9 +27,11 @@ let breweryContainer = document.querySelector('#breweryContainer')
         urlTag.target = '_blank'
         urlTag.classList.add('urlStyle')
     
-    breweryCards.append(nameOfBrewery,styleOfBrewery, locationOfBrewery)
-    urlTag.append(breweryCards)
-        breweryContainer.append(urlTag)  
+    // in case we want to add different functionality to card URL could be linked just to brewery name
+    urlTag.append(nameOfBrewery)
+    breweryCards.append(urlTag,styleOfBrewery, locationOfBrewery)
+    // urlTag.append(breweryCards)
+        breweryContainer.append(breweryCards)  
   }
   // comment form function fully working and competing!
   const comments = document.querySelector('#comment-form')
