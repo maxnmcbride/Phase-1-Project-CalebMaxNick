@@ -16,7 +16,7 @@ a:active { text-decoration: none; }
   border-style: double;
   border-width: 10px;
   border-radius: 10px;
-  background: grey;
+  background: rgb(169, 113, 57);
   background-size: contain;
   position: relative;
 }
@@ -32,8 +32,12 @@ a:active { text-decoration: none; }
   height: 18rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  background: #e8eded;
-  box-shadow: 7px 7px 15px #9f4204
+  background: #efdeca;
+  box-shadow: 10px 10px 1px 2px rgba(159,66,4, 30%)
+}
+
+.card:hover{
+  transform: scale(1.05);
 }
     
 .breweryStyleFont{
@@ -43,7 +47,7 @@ a:active { text-decoration: none; }
   }
 
 .formFormat{
-  background: blanchedalmond;
+  background:rgb(169, 113, 57);
   border: rgb(3, 3, 3) double 5px;
   border-radius: 5px;
   padding: 10px;
