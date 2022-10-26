@@ -9,7 +9,7 @@ a:active { text-decoration: none; }
 }
 
 .title{
-  text-family: 'Luminari', sans-serif;
+  font-family: 'Luminari', sans-serif;
   font-weight: bold;
   font-size: 72px;
   text-align: center;
@@ -26,7 +26,6 @@ a:active { text-decoration: none; }
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: large;
   font-variant: small-caps;
-  border: rgb(3, 3, 3) solid 1px;
   border-radius: 5%;
   padding: 1rem;
   width: 12rem;
@@ -34,7 +33,7 @@ a:active { text-decoration: none; }
   display: inline-grid;
   margin: 1rem 2rem;
   background: #e8eded;
-  box-shadow: 3px 4px #dff30a
+  box-shadow: 7px 7px 15px #9f4204
 }
     
 .breweryStyleFont{
@@ -45,7 +44,7 @@ a:active { text-decoration: none; }
 
 .formFormat{
   background: blanchedalmond;
-  border: rgb(3, 3, 3) solid 1px;
+  border: rgb(3, 3, 3) double 5px;
   border-radius: 5px;
   padding: 10px;
 }
