@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
 let breweryData = [];
 let breweryContainer = document.querySelector('#breweryContainer')
 
-  fetch ('https://api.openbrewerydb.org/breweries')
+ function fetchData(){fetch ('https://api.openbrewerydb.org/breweries')
   .then(response => response.json())
   .then((data) => {
     breweryData = data;
@@ -10,6 +10,11 @@ let breweryContainer = document.querySelector('#breweryContainer')
       renderBreweryData(brewery); 
     })
   })
+}
+
+document.getElementById('allBrewsButton').addEventListener('click', fetchData)
+
+fetchData()
   // function to generate brewery cards
 function renderBreweryData(brewery){
   let breweryCards = document.createElement('div')
@@ -25,7 +30,7 @@ function renderBreweryData(brewery){
       urlTag.href = brewery.website_url
       urlTag.target = '_blank'
       urlTag.classList.add('urlStyle')
-  const breweryLiker = document.createElement( "button" )
+  const breweryLiker = document.createElement('button')
     breweryLiker.innerText = '♡'
     breweryLiker.className = 'like-btn'
     let clicked = false

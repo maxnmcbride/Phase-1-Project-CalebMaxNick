@@ -10,7 +10,6 @@ a:active { text-decoration: none; }
 .titleContainer{
 display: flex;
 justify-content: center;
-padding: 10px;
 }
 
 .title{
@@ -25,6 +24,8 @@ padding: 10px;
   background-size: contain;
   position: relative;
   padding: 5px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .card {
@@ -67,4 +68,18 @@ padding: 10px;
 .searchBar{
   text-align: center;
   font-size: 35px;
+}
+
+.searchBarContainer{
+  padding: 10px;
+}
+
+.searchInput{
+  height: 25px;
+  width: 250px;
+}
+
+.buttonContainer{
+  justify-content: center;
+  text-align: center;
 }
